@@ -1,5 +1,6 @@
 <template>
   <div class="container-wheel">
+    <div class="satellite"></div>
     <div class="sun"></div>
     <div class="wheel">
       <div
@@ -170,6 +171,19 @@ function nbYearof(nbMilli: number, precision: number) {
   background-position: center;
   background-repeat: no-repeat;
   background-color: transparent;
+}
+.satellite {
+  position: absolute;
+  width: 20vh;
+  height: 20vh;
+  margin: 50px -15vh;
+  border-radius: 100%;
+  background-image: url('../assets/photo_jojo_cv.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  box-shadow: 0 0 30px 12px #f9dd62;
+  z-index: 3;
 }
 .wheel {
   position: absolute;
