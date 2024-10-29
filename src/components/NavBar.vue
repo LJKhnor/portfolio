@@ -3,7 +3,8 @@
     <h1 class="green">{{ msg }}</h1>
     <nav>
       <RouterLink to="/">Home</RouterLink> |
-      <RouterLink to="/project">Project</RouterLink> |
+      <RouterLink to="/project">IT Projects</RouterLink> |
+      <RouterLink to="/project">Other Projects</RouterLink> |
       <RouterLink to="/skills">Skills</RouterLink> |
       <RouterLink to="/cv">CV</RouterLink> |
       <RouterLink to="/contact">Contact</RouterLink> |

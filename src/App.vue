@@ -4,7 +4,9 @@
       <NavBar msg="Lejeune Joachim" />
     </div>
   </header>
-  <main><RouterView /></main>
+  <main>
+    <div class="main"><RouterView /></div>
+  </main>
   <footer class="footer">
     <div class="footer-wrapper">This site is design by me</div>
   </footer>

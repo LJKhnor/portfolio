@@ -1,88 +1,241 @@
 <template>
-  <div class="home">
-    <h1>C'est la page de présentation rapide</h1>
-  </div>
-  <div class="wheel">
-    <div class="info" style="transform: rotate(0deg)">
-      <IconMdi :mdiIconName="mdiCakeVariant" />
-    </div>
-    <div class="info" style="transform: rotate(30deg)">
-      <IconMdi :mdiIconName="mdiAccountArrowUp" />
-    </div>
-    <div class="info" style="transform: rotate(60deg)">
-      <IconMdi :mdiIconName="mdiAccountMultipleOutline" />
-    </div>
-    <div class="info" style="transform: rotate(90deg)">
-      <IconMdi :mdiIconName="mdiAccountMultipleOutline" />
-    </div>
-    <div class="info" style="transform: rotate(120deg)">
-      <IconMdi :mdiIconName="mdiAccountMultipleOutline" />
-    </div>
-    <div class="info" style="transform: rotate(150deg)">
-      <IconMdi :mdiIconName="mdiAccountMultipleOutline" />
-    </div>
-    <div class="info" style="transform: rotate(180deg)">
-      <IconMdi :mdiIconName="mdiAccountMultipleOutline" />
-    </div>
-    <div class="info" style="transform: rotate(210deg)">
-      <IconMdi :mdiIconName="mdiAccountMultipleOutline" />
-    </div>
-    <div class="info" style="transform: rotate(240deg)">
-      <IconMdi :mdiIconName="mdiAccountMultipleOutline" />
-    </div>
-    <div class="info" style="transform: rotate(270deg)">
-      <IconMdi :mdiIconName="mdiAccountMultipleOutline" />
-    </div>
-    <div class="info" style="transform: rotate(300deg)">
-      <IconMdi :mdiIconName="mdiAccountMultipleOutline" />
-    </div>
-    <div class="info" style="transform: rotate(330deg)">
-      <IconMdi :mdiIconName="mdiAccountMultipleOutline" />
+  <div class="container-wheel">
+    <div class="sun"></div>
+    <div class="wheel">
+      <div
+        class="info"
+        @mouseover="updateCenterContent('Age')"
+        @mouseout="clearContent"
+        style="transform: rotate(0deg)"
+      >
+        <IconMdi class="icon" :mdiIconName="mdiCakeVariant" />
+      </div>
+      <div
+        class="info"
+        @mouseover="updateCenterContent('Maried')"
+        @mouseout="clearContent"
+        style="transform: rotate(30deg)"
+      >
+        <IconMdi class="icon" :mdiIconName="mdiRing" />
+      </div>
+      <div
+        class="info"
+        @mouseover="updateCenterContent('Dad')"
+        @mouseout="clearContent"
+        style="transform: rotate(60deg)"
+      >
+        <IconMdi class="icon" :mdiIconName="mdiAccountChild" />
+      </div>
+      <div
+        class="info"
+        @mouseover="updateCenterContent('Experience')"
+        @mouseout="clearContent"
+        style="transform: rotate(90deg)"
+      >
+        <IconMdi class="icon" :mdiIconName="mdiDesktopClassic" />
+      </div>
+      <div
+        class="info"
+        @mouseover="updateCenterContent('Illustrator')"
+        @mouseout="clearContent"
+        style="transform: rotate(120deg)"
+      >
+        <IconMdi class="icon" :mdiIconName="mdiPalette" />
+      </div>
+      <div
+        class="info"
+        @mouseover="updateCenterContent('Brewer')"
+        @mouseout="clearContent"
+        style="transform: rotate(150deg)"
+      >
+        <IconMdi class="icon" :mdiIconName="mdiBeer" />
+      </div>
+      <div
+        class="info"
+        @mouseover="updateCenterContent('Hobbies')"
+        @mouseout="clearContent"
+        style="transform: rotate(180deg)"
+      >
+        <IconMdi class="icon" :mdiIconName="mdiDiceD20" />
+      </div>
+      <div class="center-content">{{ centerContent }}</div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import IconMdi from '@/components/icons/IconMdi.vue'
 
 import {
   mdiCakeVariant,
-  mdiAccountArrowUp,
-  mdiAccountMultipleOutline,
+  mdiAccountChild,
+  mdiDesktopClassic,
+  mdiRing,
+  mdiDiceD20,
+  mdiPalette,
+  mdiBeer,
+  // mdiAccountMultipleOutline,
 } from '@mdi/js'
+
+const centerContent = ref('Who am I ?')
+const milliInYear = 1000 * 60 * 60 * 24 * 365.25
+
+function updateCenterContent(content: string) {
+  switch (content) {
+    case 'Age': {
+      const ageInMilli =
+        new Date().getTime() - new Date('18 December 1987').getTime()
+      centerContent.value = "I'm " + nbYearof(ageInMilli, 0) + ' years old.'
+      break
+    }
+    case 'Experience': {
+      const xpYear =
+        new Date().getFullYear() - new Date('6 May 2023').getFullYear()
+      const xpMonth = new Date().getMonth() - new Date('6 May 2023').getMonth()
+      centerContent.value =
+        'I am a software developper for ' +
+        xpYear.toString() +
+        (xpMonth > 0 ? ' year and ' + xpMonth + ' month' : ' year')
+      break
+    }
+    case 'Maried': {
+      const mariageYear =
+        new Date().getFullYear() - new Date('12 April 2012').getFullYear()
+      const xpMonth =
+        new Date().getMonth() - new Date('12 April 2012').getMonth()
+      centerContent.value =
+        "I'm married for " +
+        mariageYear.toString() +
+        (xpMonth > 0 ? ' year and ' + xpMonth + ' month' : ' year')
+      break
+    }
+    case 'Dad': {
+      const dadYear =
+        new Date().getFullYear() - new Date('18 Jully 2017').getFullYear()
+      const dadMonth =
+        new Date().getMonth() - new Date('18 Jully 2017').getMonth()
+      centerContent.value =
+        "I'm a twin dad for " +
+        dadYear.toString() +
+        (dadMonth > 0 ? ' year and ' + dadMonth + ' month' : ' year')
+      break
+    }
+    case 'Illustrator': {
+      centerContent.value =
+        'I have made the cover artwork of one book and the logo and banner of two company to date'
+      break
+    }
+    case 'Brewer': {
+      centerContent.value = 'I brewed my own beer.'
+      break
+    }
+    case 'Hobbies': {
+      centerContent.value =
+        'I like to do Wargame, role-playing games with my friends or my children, drawing, watching movies and series with my wife, playing video games'
+      break
+    }
+    default: {
+      centerContent.value = 'Nope'
+      break
+    }
+  }
+}
+function clearContent() {
+  centerContent.value = 'Who am I ?'
+}
+function nbYearof(nbMilli: number, precision: number) {
+  return (Math.floor((nbMilli / milliInYear) * 100) / 100)
+    .toFixed(precision)
+    .toString()
+}
 </script>
 
 <style>
-.wheel {
+.container-wheel {
   position: relative;
+  margin-top: 10vh;
+  margin-left: 25vh;
+}
+.sun {
+  position: absolute;
   width: 50vh;
   height: 50vh;
   margin: 50px auto;
   border-radius: 50%;
-  background: linear-gradient(-90deg, #f9dd62, var(--color-theme));
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(-90deg, var(--color-theme), #f9dd62);
+  box-shadow: 0 0 30px 12px var(--color-shadow);
+  /* background-image: url('../assets/photo_jojo_cv.jpg'); */
+  /* background-size: 75%; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
 }
-
-.info {
-  align-content: space-evenly;
+.wheel {
   position: absolute;
-  width: 5vh;
-  height: 10vh;
+  z-index: 1;
+}
+.info {
+  position: absolute;
+  align-content: space-evenly;
+  width: 50vh;
   font:
     bold 20px Arial,
     sans-serif;
   color: #fff;
   text-align: center;
   border-radius: 50%;
-  background-color: #333;
-  transform-origin: 50% 35vh;
+  transform-origin: 50% 30vh;
+  cursor: pointer;
+  z-index: 2;
 }
-@keyframes spin {
+
+.info:nth-child(2) .icon {
+  transform: rotate(-30deg); /* Rotation inverse pour garder l'icône droite */
+}
+
+.info:nth-child(3) .icon {
+  transform: rotate(-60deg);
+}
+.info:nth-child(4) .icon {
+  transform: rotate(-90deg);
+}
+.info:nth-child(5) .icon {
+  transform: rotate(-120deg);
+}
+.info:nth-child(6) .icon {
+  transform: rotate(-150deg);
+}
+.info:nth-child(7) .icon {
+  transform: rotate(-180deg);
+}
+.center-content {
+  align-content: center;
+  position: absolute;
+  width: 50vh;
+  height: 60vh;
+  /* transform: translate(22vh, 26vh); */
+  text-align: center;
+  font-size: 1.5em;
+  color: var(--color-background);
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 1;
+}
+@media (min-width: 1024px) {
+  .container-wheel {
+    position: relative;
+    margin-top: 10vh;
+    margin-left: 40vh;
+  }
+}
+/* @keyframes spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 </style>
