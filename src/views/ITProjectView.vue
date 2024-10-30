@@ -26,14 +26,11 @@
                 >Vue.js <img src="../assets/icons8-vue-js-16.png"
               /></a>
             </li>
-            <li>+ 250h of work (ongoing)</li>
           </ul>
         </dd>
         <p class="explications">
-          PediMed is a web and mobile application that allows specialized
-          medical pedicures to manage their google calendar and patient files.
-          Anonymized data is visually accessible through a map that highlights
-          proximity to patients.
+          GW2 Farming tracker is a web application for tracking and statistical
+          calculation of farming sessions on the Guild Wars 2 mmorpg.
         </p>
       </div>
       <div class="div-project">
@@ -219,7 +216,6 @@
 .dd {
   text-indent: 2vh;
   margin-top: 2vh;
-  display: none;
 }
 p {
   margin-top: 2vh;
@@ -236,8 +232,5 @@ p {
   }
 }
 @media (hover: hover) {
-  .dt :hover {
-    display: flex;
-  }
 }
 </style>
