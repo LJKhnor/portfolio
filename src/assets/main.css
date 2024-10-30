@@ -21,7 +21,8 @@ a,
 
 @media (hover: hover) {
   a:hover {
-    background-color: var(--color-theme);
+    background-color: var(--color-theme-fade);
+    box-shadow: 0 0 12px 4px var(--color-theme-fade);
     color: var(--color-text);
   }
 }

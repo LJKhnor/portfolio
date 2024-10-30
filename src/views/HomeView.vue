@@ -133,7 +133,7 @@ function updateCenterContent(content: string) {
     }
     case 'Hobbies': {
       centerContent.value =
-        'I like to do Wargame, role-playing games with my friends or my children, drawing, watching movies and series with my wife, playing video games'
+        'I like to do Wargame, role-playing games with my friends or my children, drawing, watching movies and series with my wife, playing video games and keep fit by playing sports.'
       break
     }
     default: {

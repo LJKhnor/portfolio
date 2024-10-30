@@ -18,8 +18,6 @@ import NavBar from './components/NavBar.vue'
 </script>
 
 <style scoped>
-.footer-wrapper {
-}
 .footer {
   position: fixed;
   left: 0;

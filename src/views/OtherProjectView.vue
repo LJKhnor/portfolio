@@ -1,6 +1,6 @@
 <template>
   <div class="project-view">
-    <h1>C'est la page de mes projets</h1>
+    <h1>C'est la page de mes autres projets hors IT</h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et nisi eu
       ipsum eleifend sagittis a sed libero. In efficitur purus ac ipsum tempus,
