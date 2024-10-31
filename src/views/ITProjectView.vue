@@ -27,11 +27,12 @@
               /></a>
             </li>
           </ul>
+          <p class="explications">
+            GW2 Farming tracker is a web application for tracking and
+            statistical calculation of farming sessions on the Guild Wars 2
+            mmorpg.
+          </p>
         </dd>
-        <p class="explications">
-          GW2 Farming tracker is a web application for tracking and statistical
-          calculation of farming sessions on the Guild Wars 2 mmorpg.
-        </p>
       </div>
       <div class="div-project">
         <dt class="dt">PediMed (ongoing)</dt>
@@ -60,13 +61,13 @@
             </li>
             <li>+ 250h of work (ongoing)</li>
           </ul>
+          <p class="explications">
+            PediMed is a web and mobile application that allows specialized
+            medical pedicures to manage their google calendar and patient files.
+            Anonymized data is visually accessible through a map that highlights
+            proximity to patients.
+          </p>
         </dd>
-        <p class="explications">
-          PediMed is a web and mobile application that allows specialized
-          medical pedicures to manage their google calendar and patient files.
-          Anonymized data is visually accessible through a map that highlights
-          proximity to patients.
-        </p>
       </div>
 
       <div class="div-project">
@@ -81,11 +82,11 @@
             </li>
             <li>80 hours of work</li>
           </ul>
+          <p class="explications">
+            This portfolio is a showcase of my achievements as a worker since I
+            was 21. Not just as a developer.
+          </p>
         </dd>
-        <p class="explications">
-          This portfolio is a showcase of my achievements as a worker since I
-          was 21. Not just as a developer.
-        </p>
       </div>
       <div class="div-project">
         <dt class="dt">
@@ -119,13 +120,13 @@
             </li>
             <li>80 hours of work</li>
           </ul>
+          <p class="explications">
+            Elo Ranking System is a web application that allows you to create
+            Magic the gathering league for several players and encode their
+            games, their decks. As the results are integrated, statistics are
+            calculated and accessible in a dashboard.
+          </p>
         </dd>
-        <p class="explications">
-          Elo Ranking System is a web application that allows you to create
-          Magic the gathering league for several players and encode their games,
-          their decks. As the results are integrated, statistics are calculated
-          and accessible in a dashboard.
-        </p>
       </div>
       <div class="div-project">
         <dt class="dt">
@@ -157,11 +158,11 @@
               /></a>
             </li>
           </ul>
+          <p>
+            Telematics application for business analysis and vehicle fleet
+            management.
+          </p>
         </dd>
-        <p>
-          Telematics application for business analysis and vehicle fleet
-          management.
-        </p>
       </div>
       <div class="div-project">
         <dt class="dt">
@@ -193,11 +194,11 @@
               >
             </li>
           </ul>
+          <p>
+            Telematics application for business analysis and vehicle fleet
+            management.
+          </p>
         </dd>
-        <p>
-          Telematics application for business analysis and vehicle fleet
-          management.
-        </p>
       </div>
     </dl>
   </div>
@@ -219,6 +220,7 @@
 }
 p {
   margin-top: 2vh;
+  text-indent: 0%;
 }
 .div-project {
   margin-top: 4vh;

@@ -12,14 +12,12 @@
           <img class="img" src="../assets/logo 5 petit format.svg" />
           <img class="img-xl" src="../assets/ref logo 5 petit format.svg" />
         </dd>
-        <p></p>
       </div>
       <div class="div-project">
         <dt class="dt">Logo for "Valériane Pédicure"</dt>
         <dd class="dd">
           <img class="img-val" src="../assets/logo_pedicure_val.png" />
         </dd>
-        <p></p>
       </div>
       <div class="div-project">
         <dt class="dt">
@@ -29,7 +27,6 @@
         <dd class="dd">
           <img class="img-xxl" src="../assets/1.Couverture logo.png" />
         </dd>
-        <p></p>
       </div>
     </dl>
   </div>
@@ -48,7 +45,8 @@
 .dd {
   text-indent: 2vh;
   margin-top: 2vh;
-  display: none;
+
+  animation: fadein 1s;
 }
 p {
   margin-top: 2vh;
@@ -82,9 +80,5 @@ p {
   }
 }
 @media (hover: hover) {
-  .dt:hover + .dd {
-    transition: 100s;
-    display: flex;
-  }
 }
 </style>

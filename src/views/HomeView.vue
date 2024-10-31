@@ -184,6 +184,7 @@ function nbYearof(nbMilli: number, precision: number) {
   background-color: transparent;
   box-shadow: 0 0 30px 12px #f9dd62;
   z-index: 3;
+  animation: fadein 1s;
 }
 .wheel {
   position: absolute;
@@ -202,6 +203,8 @@ function nbYearof(nbMilli: number, precision: number) {
   transform-origin: 50% 30vh;
   cursor: pointer;
   z-index: 2;
+
+  animation: fadein 1s;
 }
 
 .info:nth-child(2) .icon {
@@ -252,4 +255,12 @@ function nbYearof(nbMilli: number, precision: number) {
     transform: rotate(360deg);
   }
 } */
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 </style>
