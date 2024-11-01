@@ -7,8 +7,8 @@
       <RouterLink to="/other_project">Other Projects</RouterLink> |
       <!-- <RouterLink to="/skills">Skills</RouterLink> |
       <RouterLink to="/cv">CV</RouterLink> | -->
-      <RouterLink to="/contact">Contact</RouterLink> |
-      <RouterLink to="/about">About</RouterLink>
+      <RouterLink to="/contact">Contact</RouterLink>
+      <!-- <RouterLink to="/about">About</RouterLink> -->
     </nav>
   </div>
 </template>

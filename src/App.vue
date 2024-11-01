@@ -8,7 +8,7 @@
     <div class="main"><RouterView /></div>
   </main>
   <footer class="footer">
-    <div class="footer-wrapper">This site is design by me</div>
+    <div class="footer-wrapper">This site is designed by me</div>
   </footer>
 </template>
 
