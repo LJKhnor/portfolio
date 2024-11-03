@@ -80,46 +80,44 @@ import {
 } from '@mdi/js'
 
 const centerContent = ref('Who am I ?')
-const milliInYear = 1000 * 60 * 60 * 24 * 365.25
 
 function updateCenterContent(content: string) {
+  const endDate = new Date()
+  const birthDate = new Date('18 December 1987')
+  const startDevCarrierDate = new Date('6 May 2023')
+  const startMarriageDate = new Date('12 April 2012')
+  const startDadDate = new Date('18 Jully 2017')
   switch (content) {
     case 'Age': {
-      const ageInMilli =
-        new Date().getTime() - new Date('18 December 1987').getTime()
-      centerContent.value = "I'm " + nbYearof(ageInMilli, 0) + ' years old.'
+      const ageYear = processCorrectNbYear(endDate, birthDate)
+      centerContent.value = "I'm " + ageYear + ' years old.'
       break
     }
     case 'Experience': {
-      const xpYear =
-        new Date().getFullYear() - new Date('6 May 2023').getFullYear()
-      const xpMonth = new Date().getMonth() - new Date('6 May 2023').getMonth()
+      const xpYear = processCorrectNbYear(endDate, startDevCarrierDate)
+      const xpMonth = endDate.getMonth() - startDevCarrierDate.getMonth()
       centerContent.value =
         'I am a software developper for ' +
         xpYear.toString() +
-        (xpMonth > 0 ? ' year and ' + xpMonth + ' month' : ' year')
+        (xpMonth > 0 ? ' years and ' + xpMonth + ' months' : ' year')
       break
     }
     case 'Maried': {
-      const mariageYear =
-        new Date().getFullYear() - new Date('12 April 2012').getFullYear()
-      const xpMonth =
-        new Date().getMonth() - new Date('12 April 2012').getMonth()
+      const mariageYear = processCorrectNbYear(endDate, startMarriageDate)
+      const xpMonth = endDate.getMonth() - startMarriageDate.getMonth()
       centerContent.value =
         "I'm married for " +
         mariageYear.toString() +
-        (xpMonth > 0 ? ' year and ' + xpMonth + ' month' : ' year')
+        (xpMonth > 0 ? ' years and ' + xpMonth + ' months' : ' year')
       break
     }
     case 'Dad': {
-      const dadYear =
-        new Date().getFullYear() - new Date('18 Jully 2017').getFullYear()
-      const dadMonth =
-        new Date().getMonth() - new Date('18 Jully 2017').getMonth()
+      const dadYear = processCorrectNbYear(endDate, startDadDate)
+      const dadMonth = endDate.getMonth() - startDadDate.getMonth()
       centerContent.value =
         "I'm a twin dad for " +
         dadYear.toString() +
-        (dadMonth > 0 ? ' year and ' + dadMonth + ' month' : ' year')
+        (dadMonth > 0 ? ' years and ' + dadMonth + ' months' : ' year')
       break
     }
     case 'Illustrator': {
@@ -145,10 +143,16 @@ function updateCenterContent(content: string) {
 function clearContent() {
   centerContent.value = 'Who am I ?'
 }
-function nbYearof(nbMilli: number, precision: number) {
-  return (Math.floor((nbMilli / milliInYear) * 100) / 100)
-    .toFixed(precision)
-    .toString()
+function processCorrectNbYear(endDate: Date, starDate: Date) {
+  let nbYear = endDate.getFullYear() - starDate.getFullYear()
+  if (
+    endDate.getMonth() < starDate.getMonth() ||
+    (endDate.getMonth() === starDate.getMonth() &&
+      endDate.getDate() < starDate.getDate())
+  ) {
+    nbYear--
+  }
+  return nbYear
 }
 </script>
 

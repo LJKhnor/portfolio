@@ -15,8 +15,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import NavBar from './components/NavBar.vue'
-
-import IconMdi from '@/components/icons/IconMdi.vue'
 </script>
 
 <style scoped>
