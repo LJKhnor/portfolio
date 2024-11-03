@@ -9,23 +9,27 @@
           >
         </dt>
         <dd class="dd">
-          <img class="img" src="../assets/logo 5 petit format.svg" />
-          <img class="img-xl" src="../assets/ref logo 5 petit format.svg" />
+          <img class="img" src="../assets/logo 5 petit format.jpg" />
+          <img class="img-xl" src="../assets/ref logo 5 petit format.jpg" />
         </dd>
       </div>
       <div class="div-project">
         <dt class="dt">Logo for "Valériane Pédicure"</dt>
         <dd class="dd">
-          <img class="img-val" src="../assets/logo_pedicure_val.png" />
+          <img class="img-val" src="../assets/logo_pedicure_val.jpg" />
         </dd>
       </div>
       <div class="div-project">
         <dt class="dt">
-          Cover and chapter illustration for the book "Les Chroniques
-          d'Ellentride, Tome 1"
+          Cover and chapter illustration for the book
+          <a
+            href="https://booknode.com/l_ere_des_troubles_tome_1_hiro_02327455"
+            target="_blank"
+            >"Les Chroniques d'Ellentride, Tome 1"</a
+          >
         </dt>
         <dd class="dd">
-          <img class="img-xxl" src="../assets/1.Couverture logo.png" />
+          <img class="img-xxl" src="../assets/Couverture logo.jpg" />
         </dd>
       </div>
     </dl>
@@ -56,10 +60,16 @@ p {
   padding: 1vh;
   box-shadow: -2vh 2vh 12px var(--color-shadow);
 }
+img {
+  border: 2px solid var(--color-theme);
+  padding: 4px;
+  width: 148px;
+  border-radius: 25px;
+}
 .img {
-  vertical-align: top;
   height: 16vh;
   width: 16vh;
+  margin: 4vh;
 }
 .img-val {
   height: 24vh;
