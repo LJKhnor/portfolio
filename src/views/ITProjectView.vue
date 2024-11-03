@@ -59,7 +59,7 @@
                 >Vue.js <img src="../assets/icons8-vue-js-16.png"
               /></a>
             </li>
-            <li>+ 250h of work (ongoing)</li>
+            <li>+ 150h of work (ongoing)</li>
           </ul>
           <p class="explications">
             PediMed is a web and mobile application that allows specialized
@@ -80,7 +80,7 @@
                 >Vue.js <img src="../assets/icons8-vue-js-16.png"
               /></a>
             </li>
-            <li>80 hours of work</li>
+            <li>20 hours of work</li>
           </ul>
           <p class="explications">
             This portfolio is a showcase of my achievements as a worker since I
@@ -118,7 +118,7 @@
                 >Flask <img src="../assets/icons8-flask-16.png"
               /></a>
             </li>
-            <li>80 hours of work</li>
+            <li>40 hours of work</li>
           </ul>
           <p class="explications">
             Elo Ranking System is a web application that allows you to create
@@ -130,7 +130,7 @@
       </div>
       <div class="div-project">
         <dt class="dt">
-          Iotrack (<a href="https://www.actia.be/fr"
+          Iotrack (<a href="https://www.actia.be/fr" target="_blank"
             >Actia Telematics Services</a
           >)
         </dt>
@@ -166,7 +166,7 @@
       </div>
       <div class="div-project">
         <dt class="dt">
-          Telefleet (<a href="https://www.actia.be/fr"
+          Telefleet (<a href="https://www.actia.be/fr" target="_blank"
             >Actia Telematics Services</a
           >)
         </dt>

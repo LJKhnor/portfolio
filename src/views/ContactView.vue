@@ -1,6 +1,7 @@
 <template>
-  <div class="contact-view">
+  <div v-if="!emailSuccessfulySend" class="contact-view">
     <form
+      id="myForm"
       action="mailto:lejeune.joachim@gmail.com"
       method="post"
       enctype="text/plain"
@@ -29,21 +30,45 @@
       </div>
     </form>
   </div>
-  <a href="">lejeune.joachim.dev@gmail.com</a>
+  <div v-if="emailSuccessfulySend" class="email-send-validation">
+    <div class="validation-text">Email successfuly send</div>
+    <div class="button return-home-button">
+      <input
+        type="submit"
+        class="btn"
+        value="Home"
+        @click.prevent="backHome()"
+      />
+    </div>
+  </div>
 </template>
 <script lang="ts">
+import { ref } from 'vue'
 import emailjs from '@emailjs/browser'
+import router from '@/router'
 export default {
   name: 'ContactView',
   setup() {
+    const emailSuccessfulySend = ref(false)
+    function initEmailJs() {
+      emailjs.init({
+        publicKey: '-cEDF_uJE7BZZsg2h',
+      })
+    }
     function send() {
-      console.log('coucou')
-      emailjs.sendForm('service_5xf0hek', 'template_d4gb25p', '#myForm').then(
-        () => console.log('SUCCESS !'),
-        (error: string) => console.error('FAILED ...', error),
+      initEmailJs()
+      emailjs.sendForm('service_5xf0hek', 'template_m58wj0f', '#myForm').then(
+        () => {
+          console.log('SUCCESS sending email !')
+          emailSuccessfulySend.value = true
+        },
+        (error: string) => console.error('FAILED sending email...', error),
       )
     }
-    return { send }
+    function backHome() {
+      router.push('/')
+    }
+    return { emailSuccessfulySend, send, backHome }
   },
 }
 </script>
