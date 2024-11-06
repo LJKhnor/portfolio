@@ -9,14 +9,20 @@
           >
         </dt>
         <dd class="dd">
-          <img class="img" src="../assets/logo 5 petit format.jpg" />
-          <img class="img-xl" src="../assets/ref logo 5 petit format.jpg" />
+          <img
+            class="photo img-normal"
+            src="../assets/logo 5 petit format.jpg"
+          />
+          <img
+            class="photo img-xl"
+            src="../assets/ref logo 5 petit format.jpg"
+          />
         </dd>
       </div>
       <div class="div-project">
         <dt class="dt">Logo for "Valériane Pédicure"</dt>
         <dd class="dd">
-          <img class="img-val" src="../assets/logo_pedicure_val.jpg" />
+          <img class="photo img-val" src="../assets/logo_pedicure_val.jpg" />
         </dd>
       </div>
       <div class="div-project">
@@ -29,7 +35,7 @@
           >
         </dt>
         <dd class="dd">
-          <img class="img-xxl" src="../assets/Couverture logo.jpg" />
+          <img class="photo img-xxl" src="../assets/Couverture logo.jpg" />
         </dd>
       </div>
     </dl>
@@ -60,13 +66,13 @@ p {
   padding: 1vh;
   box-shadow: -2vh 2vh 12px var(--color-shadow);
 }
-img {
+.photo {
   border: 2px solid var(--color-theme);
   padding: 4px;
   width: 148px;
   border-radius: 25px;
 }
-.img {
+.img-normal {
   height: 16vh;
   width: 16vh;
   margin: 4vh;
