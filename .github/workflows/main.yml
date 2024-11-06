@@ -31,5 +31,5 @@ jobs:
       # Étape 4 : Déploiement (facultatif)
       - name: Deploy to server
         run: |
-          ssh -o StrictHostKeyChecking=no joachim18@81.241.109.28 "rm -rf /var/www/lejeunjoachim.be/*"
+          ssh -o StrictHostKeyChecking=no joachim18@81.241.109.28 "sudo rm -rf /var/www/lejeunjoachim.be/*"
           scp -r dist/* joachim18@81.241.109.28:/var/www/lejeunjoachim.be/
