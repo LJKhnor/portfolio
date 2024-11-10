@@ -1,0 +1,35 @@
+name: Build and Deploy
+
+# Déclenche le pipeline à chaque push sur la branche principale
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Étape 1 : Checkout du code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Étape 2 : Installation des dépendances Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # Spécifie la version de Node.js
+
+      - name: Install dependencies
+        run: npm install
+
+      # Étape 3 : Build du projet pour générer le dossier `dist`
+      - name: Build project
+        run: npm run build
+
+      # Étape 4 : Déploiement (facultatif)
+      - name: Deploy to server
+        run: |
+          ssh -o StrictHostKeyChecking=no joachim18@81.241.109.28 "sudo rm -rf /var/www/lejeunjoachim.be/*"
+          scp -r dist/* joachim18@81.241.109.28:/var/www/lejeunjoachim.be/
