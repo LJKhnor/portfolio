@@ -34,9 +34,9 @@ import NavBar from './components/NavBar.vue'
   }
 
   header .wrapper {
-    /* display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap; */
+    /* display: flex; */
+    /* place-items: flex-start; */
+    /* flex-wrap: wrap; */
   }
 
   nav {
@@ -49,6 +49,9 @@ import NavBar from './components/NavBar.vue'
   }
 }
 @media (max-width: 1024px) {
+  header .wrapper {
+    width: 100vh;
+  }
   .footer {
     /* align-content: flex-end;
     height: 45vh;
