@@ -1,65 +1,60 @@
 <template>
+  <div class="satellite"></div>
+  <div class="sun"></div>
   <div class="container-wheel">
-    <div class="satellite"></div>
-    <div class="sun"></div>
     <div class="wheel">
       <div
-        class="info"
+        class="info info1"
         @mouseover="updateCenterContent('Age')"
         @mouseout="clearContent"
-        style="transform: rotate(0deg)"
       >
         <IconMdi class="icon" :mdiIconName="mdiCakeVariant" />
       </div>
       <div
-        class="info"
+        class="info info2"
         @mouseover="updateCenterContent('Maried')"
         @mouseout="clearContent"
-        style="transform: rotate(30deg)"
       >
         <IconMdi class="icon" :mdiIconName="mdiRing" />
       </div>
       <div
-        class="info"
+        class="info info3"
         @mouseover="updateCenterContent('Dad')"
         @mouseout="clearContent"
-        style="transform: rotate(60deg)"
       >
         <IconMdi class="icon" :mdiIconName="mdiAccountChild" />
       </div>
       <div
-        class="info"
+        class="info info4"
         @mouseover="updateCenterContent('Experience')"
         @mouseout="clearContent"
-        style="transform: rotate(90deg)"
       >
         <IconMdi class="icon" :mdiIconName="mdiDesktopClassic" />
       </div>
       <div
-        class="info"
+        class="info info5"
         @mouseover="updateCenterContent('Illustrator')"
         @mouseout="clearContent"
-        style="transform: rotate(120deg)"
       >
         <IconMdi class="icon" :mdiIconName="mdiPalette" />
       </div>
       <div
-        class="info"
+        class="info info6"
         @mouseover="updateCenterContent('Brewer')"
         @mouseout="clearContent"
-        style="transform: rotate(150deg)"
       >
         <IconMdi class="icon" :mdiIconName="mdiBeer" />
       </div>
       <div
-        class="info"
+        class="info info7"
         @mouseover="updateCenterContent('Hobbies')"
         @mouseout="clearContent"
-        style="transform: rotate(180deg)"
       >
         <IconMdi class="icon" :mdiIconName="mdiDiceD20" />
       </div>
-      <div class="center-content">{{ centerContent }}</div>
+      <div class="info8 center-content">
+        {{ centerContent }}
+      </div>
     </div>
   </div>
 </template>
@@ -158,43 +153,40 @@ function processCorrectNbYear(endDate: Date, starDate: Date) {
 
 <style>
 .container-wheel {
-  position: relative;
   margin-top: 10vh;
-  margin-left: 25vh;
 }
 .sun {
   position: absolute;
+  margin: 50px auto;
   width: 50vh;
   height: 50vh;
-  margin: 50px auto;
   border-radius: 50%;
   background: linear-gradient(-90deg, var(--color-theme), #f9dd62);
   box-shadow: 0 0 30px 12px var(--color-shadow);
-  /* background-image: url('../assets/photo_jojo_cv.jpg'); */
-  /* background-size: 75%; */
   background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
+  /* background-repeat: no-repeat; */
+  /* background-color: transparent; */
 }
 .satellite {
-  position: absolute;
-  width: 20vh;
-  height: 20vh;
-  margin: 50px -15vh;
-  border-radius: 100%;
-  background-image: url('../assets/photo_jojo_cv.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  box-shadow: 0 0 30px 12px #f9dd62;
-  z-index: 3;
-  animation: fadein 1s;
+  /* position: absolute; */
+  /* width: 20vh; */
+  /* height: 20vh; */
+  /* margin: 50px -15vh; */
+  /* border-radius: 100%; */
+  /* background-image: url('../assets/photo_jojo_cv.jpg'); */
+  /* background-size: 100%; */
+  /* background-repeat: no-repeat; */
+  /* background-color: transparent; */
+  /* box-shadow: 0 0 30px 12px #f9dd62; */
+  /* z-index: 3; */
+  /* animation: fadein 1s; */
 }
 .wheel {
   position: absolute;
   z-index: 1;
 }
 .info {
+  /* margin: clamp(1vw, 5vw, 5vw); */
   position: absolute;
   align-content: space-evenly;
   width: 50vh;
@@ -211,31 +203,11 @@ function processCorrectNbYear(endDate: Date, starDate: Date) {
   animation: fadein 1s;
 }
 
-.info:nth-child(2) .icon {
-  transform: rotate(-30deg); /* Rotation inverse pour garder l'icône droite */
-}
-
-.info:nth-child(3) .icon {
-  transform: rotate(-60deg);
-}
-.info:nth-child(4) .icon {
-  transform: rotate(-90deg);
-}
-.info:nth-child(5) .icon {
-  transform: rotate(-120deg);
-}
-.info:nth-child(6) .icon {
-  transform: rotate(-150deg);
-}
-.info:nth-child(7) .icon {
-  transform: rotate(-180deg);
-}
-.center-content {
-  align-content: center;
+/* .center-content {
   position: absolute;
+  align-content: center;
   width: 50vh;
   height: 60vh;
-  /* transform: translate(22vh, 26vh); */
   text-align: center;
   font-size: 1.5em;
   color: var(--color-background);
@@ -243,22 +215,75 @@ function processCorrectNbYear(endDate: Date, starDate: Date) {
   padding: 10px;
   border-radius: 10px;
   z-index: 1;
-}
-@media (min-width: 1024px) {
+} */
+
+/* écran de smartphone  */
+@media (max-width: 760px) {
   .container-wheel {
     position: relative;
     margin-top: 10vh;
-    margin-left: 40vh;
+    height: 50vh;
+  }
+  .sun {
+    display: none;
+  }
+  .satellite {
+  }
+  .wheel {
+    position: relative;
+    display: grid;
+    /* grid-template-columns: repeat(3, minmax(20px, 1fr)); */
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 0.25fr 3.5fr 0.25fr;
+    grid-template-areas:
+      'info1 info2 info3'
+      'info4 center-content info5'
+      'info6 info7 info8';
+    gap: 4px;
+    column-gap: 1px;
+    pointer-events: all;
+    align-items: center;
+    height: 100%;
+  }
+  .info {
+    margin-top: 0;
+    position: relative;
+    transform: none;
+    width: auto;
+    z-index: 1;
+    animation: fadein 1s;
+  }
+  .center-content {
+    position: relative;
+    color: var(--color-text);
+    width: 50vw;
+    z-index: 0;
+  }
+  .info1 {
+    grid-area: info1;
+  }
+  .info2 {
+    grid-area: info2;
+  }
+  .info3 {
+    grid-area: info3;
+  }
+  .info4 {
+    grid-area: info4;
+  }
+  .info5 {
+    grid-area: info5;
+  }
+  .info6 {
+    grid-area: info6;
+  }
+  .info7 {
+    grid-area: info7;
+  }
+  .info8 {
+    grid-area: center-content;
   }
 }
-/* @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 @keyframes fadein {
   from {
     opacity: 0;
