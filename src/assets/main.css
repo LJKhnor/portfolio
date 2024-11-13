@@ -1,6 +1,6 @@
 @import './base.css';
 body {
-  /* min-height: 100vh; */
+  min-height: 100vh;
   /* display: grid; */
   /* display: flex;
   flex-direction: column; */
@@ -37,17 +37,29 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1324px) {
   #app {
-    /* padding: 0 2rem; */
-  }
-  body {
-    /* display: flex;
-    place-items: center; */
+    /* width: 75vw;
+    height: auto;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
   }
 }
-@media (max-width: 1024px) {
+@media (min-width: 760px) and (max-width: 1323px) {
   #app {
-    /* padding: 0 4rem; */
+    width: 100%;
+    /* width: 50%;
+    height: auto;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+  }
+}
+@media (max-width: 760px) {
+  #app {
+    padding: 0;
   }
 }

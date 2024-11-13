@@ -6,7 +6,7 @@
       </div>
     </header>
     <main>
-      <div class="main"><RouterView /></div>
+      <div class="router-view"><RouterView /></div>
     </main>
     <footer class="footer">
       <div class="footer-wrapper">This site is designed by me</div>
@@ -21,15 +21,42 @@ import NavBar from './components/NavBar.vue'
 
 <style scoped>
 .container {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: fixed;
   text-align: center;
 }
 header {
   margin: 0 0 2%;
 }
-
-@media (max-width: 512px) {
+main {
+  margin: 0 0 2%;
+}
+.router-view {
+  margin: 5vw;
+}
+@media (min-width: 1324px) {
+  main {
+    /* width: 75vw;
+    height: auto;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+  }
+}
+@media (min-width: 760px) and (max-width: 1323px) {
+  main {
+    /* width: 50%;
+    height: auto;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+  }
+}
+@media (max-width: 760px) {
+  main {
+  }
 }
 </style>
