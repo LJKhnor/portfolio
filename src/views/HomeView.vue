@@ -206,17 +206,78 @@ function processCorrectNbYear(endDate: Date, starDate: Date) {
   z-index: 10;
   font-size: 20px;
   color: black;
-  width: 35vw;
+  width: 20%;
 }
 @media (max-width: 768px) {
   .sun {
+    display: none;
+  }
+  .container-wheel {
+    position: relative;
+    margin-top: 10vh;
+    height: 50vh;
+  }
+  .wheel {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 0.25fr 3.5fr 0.25fr;
+    grid-template-areas:
+      'info1 info2 info3'
+      'info4 center-content info5'
+      'info6 info7 info8';
+    gap: 4px;
+    column-gap: 1px;
+    pointer-events: all;
+    align-items: center;
+    height: 100%;
+  }
+  .center-content {
+    position: relative;
+    color: var(--color-text);
+    width: 50vw;
+    z-index: 0;
+    align-self: baseline;
+  }
+  .info {
+    margin-top: 0;
+    position: relative;
+    transform: none;
+    width: auto;
+    z-index: 1;
+    animation: fadein 1s;
+  }
+  .info1 {
+    grid-area: info1;
+  }
+  .info2 {
+    grid-area: info2;
+  }
+  .info3 {
+    grid-area: info3;
+  }
+  .info4 {
+    grid-area: info4;
+  }
+  .info5 {
+    grid-area: info5;
+  }
+  .info6 {
+    grid-area: info6;
+  }
+  .info7 {
+    grid-area: info7;
+  }
+  .info8 {
+    grid-area: center-content;
   }
 }
-@media (min-width: 768px) and (max-width: 1284px) {
+@media (min-width: 768px) and (max-width: 1280px) {
   /* Adapter la taille des éléments pour les écrans plus larges */
   .sun {
     width: 40vh;
     height: 40vh;
+    transition: 1s;
   }
 
   .info {
@@ -258,16 +319,55 @@ function processCorrectNbYear(endDate: Date, starDate: Date) {
   }
 }
 
-@media (min-width: 1284) {
+@media (min-width: 1280px) {
   /* Adapter encore plus pour les écrans très larges */
   .sun {
-    width: 35vh;
-    height: 35vh;
+    width: 40vh;
+    height: 40vh;
+    transition: 1s;
+  }
+  .container-wheel {
+    height: 55vh;
+  }
+  .wheel {
+    height: 135%;
+  }
+  .info {
+    width: 12vh;
+    height: 12vh;
+  }
+  .info1 {
+    top: 0;
   }
 
-  .info {
-    width: 10vh;
-    height: 10vh;
+  .info2 {
+    top: 0;
+    transform: translate(125%, 25%);
+  }
+
+  .info3 {
+    top: 0;
+    transform: translate(215%, 110%);
+  }
+
+  .info4 {
+    top: 0;
+    transform: translate(250%, 250%);
+  }
+
+  .info5 {
+    top: 0;
+    transform: translate(215%, 385%);
+  }
+
+  .info6 {
+    top: 0;
+    transform: translate(125%, 475%);
+  }
+
+  .info7 {
+    top: 0;
+    transform: translate(0%, 500%);
   }
 }
 </style>
