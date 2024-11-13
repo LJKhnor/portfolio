@@ -172,6 +172,21 @@ function processCorrectNbYear(endDate: Date, starDate: Date) {
   justify-content: center;
   align-items: center;
 }
+.satellite {
+  position: absolute;
+
+  width: 20vh;
+  height: 20vh;
+  margin: 50px -15vh;
+  border-radius: 100%;
+  background-image: url('../assets/photo_jojo_cv.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  box-shadow: 0 0 30px 12px #f9dd62;
+  z-index: 3;
+  animation: fadein 1s;
+}
 
 .wheel {
   position: absolute;
@@ -210,6 +225,9 @@ function processCorrectNbYear(endDate: Date, starDate: Date) {
 }
 @media (max-width: 768px) {
   .sun {
+    display: none;
+  }
+  .satellite {
     display: none;
   }
   .container-wheel {
@@ -279,6 +297,10 @@ function processCorrectNbYear(endDate: Date, starDate: Date) {
     height: 40vh;
     transition: 1s;
   }
+  .satellite {
+    left: 30vw;
+    top: 5vh;
+  }
 
   .info {
     width: 12vh;
@@ -325,6 +347,10 @@ function processCorrectNbYear(endDate: Date, starDate: Date) {
     width: 40vh;
     height: 40vh;
     transition: 1s;
+  }
+  .satellite {
+    left: 35vw;
+    top: 0;
   }
   .container-wheel {
     height: 55vh;
