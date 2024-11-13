@@ -198,43 +198,15 @@ function processCorrectNbYear(endDate: Date, starDate: Date) {
   z-index: 2;
 }
 
-.info1 {
-  top: 0;
-}
-
-.info2 {
-  top: 0;
-}
-
-.info3 {
-  top: 0;
-}
-
-.info4 {
-  top: 0;
-}
-
-.info5 {
-  top: 0;
-}
-
-.info6 {
-  top: 0;
-}
-
-.info7 {
-  top: 0;
-}
-
 .center-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
+  font-size: 20px;
+  color: black;
+  width: 35vw;
 }
 @media (max-width: 768px) {
   .sun {
@@ -251,12 +223,38 @@ function processCorrectNbYear(endDate: Date, starDate: Date) {
     width: 12vh;
     height: 12vh;
   }
+  .info1 {
+    top: 0;
+  }
 
-  .info1,
-  .info3,
-  .info5,
+  .info2 {
+    top: 0;
+    transform: translate(125%, 25%);
+  }
+
+  .info3 {
+    top: 0;
+    transform: translate(215%, 110%);
+  }
+
+  .info4 {
+    top: 0;
+    transform: translate(250%, 250%);
+  }
+
+  .info5 {
+    top: 0;
+    transform: translate(215%, 385%);
+  }
+
+  .info6 {
+    top: 0;
+    transform: translate(125%, 475%);
+  }
+
   .info7 {
-    font-size: 22px; /* Agrandir les icônes pour les écrans plus larges */
+    top: 0;
+    transform: translate(0%, 500%);
   }
 }
 

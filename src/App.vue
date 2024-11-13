@@ -9,7 +9,10 @@
       <div class="router-view"><RouterView /></div>
     </main>
     <footer class="footer">
-      <div class="footer-wrapper">This site is designed by me</div>
+      <div class="footer-wrapper">
+        This site is designed by
+        <a href="https://github.com/LJKhnor" target="_blank">Lejeune Joachim</a>
+      </div>
     </footer>
   </div>
 </template>
