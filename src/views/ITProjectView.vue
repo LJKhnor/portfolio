@@ -209,30 +209,46 @@
   position: relative;
   margin: 10vh;
 }
+.it-projects {
+}
+.div-project {
+  margin-top: 4vh;
+  padding: 1vh;
+  text-align: justify;
+  box-shadow: -2vh 2vh 12px var(--color-shadow);
+}
 .dt {
   color: var(--color-theme);
   font-size: x-large;
-  margin-top: 2vh;
+  margin: auto 4vw;
 }
 .dd {
-  text-indent: 2vh;
-  margin-top: 2vh;
 }
 p {
   margin-top: 2vh;
   text-indent: 0%;
 }
-.div-project {
-  margin-top: 4vh;
-  padding: 1vh;
-  box-shadow: -2vh 2vh 12px var(--color-shadow);
+
+@media (hover: hover) {
 }
-@media (min-width: 1024px) {
+@media (min-width: 1324px) {
   .project-view {
     position: relative;
     margin: 10vh 25vh 0 25vh;
   }
+  .dt {
+    margin: auto 2vw;
+  }
 }
-@media (hover: hover) {
+@media (min-width: 760px) and (max-width: 1323px) {
+}
+@media (max-width: 760px) {
+  .project-view {
+    position: relative;
+    margin: 0;
+  }
+  .dt {
+    margin: auto 4vw;
+  }
 }
 </style>

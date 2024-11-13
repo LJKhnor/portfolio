@@ -89,12 +89,27 @@ p {
   height: 45vh;
   width: 35vh;
 }
-@media (min-width: 1024px) {
+
+@media (hover: hover) {
+}
+@media (min-width: 1324px) {
   .project-view {
     position: relative;
     margin: 10vh 25vh 0 25vh;
   }
+  .dt {
+    margin: auto 2vw;
+  }
 }
-@media (hover: hover) {
+@media (min-width: 760px) and (max-width: 1323px) {
+}
+@media (max-width: 760px) {
+  .project-view {
+    position: relative;
+    margin: 0;
+  }
+  .dt {
+    margin: auto 4vw;
+  }
 }
 </style>

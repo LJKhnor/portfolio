@@ -4,62 +4,57 @@
     <div class="sun"></div>
     <div class="wheel">
       <div
-        class="info"
+        class="info info1"
         @mouseover="updateCenterContent('Age')"
         @mouseout="clearContent"
-        style="transform: rotate(0deg)"
       >
         <IconMdi class="icon" :mdiIconName="mdiCakeVariant" />
       </div>
       <div
-        class="info"
+        class="info info2"
         @mouseover="updateCenterContent('Maried')"
         @mouseout="clearContent"
-        style="transform: rotate(30deg)"
       >
         <IconMdi class="icon" :mdiIconName="mdiRing" />
       </div>
       <div
-        class="info"
+        class="info info3"
         @mouseover="updateCenterContent('Dad')"
         @mouseout="clearContent"
-        style="transform: rotate(60deg)"
       >
         <IconMdi class="icon" :mdiIconName="mdiAccountChild" />
       </div>
       <div
-        class="info"
+        class="info info4"
         @mouseover="updateCenterContent('Experience')"
         @mouseout="clearContent"
-        style="transform: rotate(90deg)"
       >
         <IconMdi class="icon" :mdiIconName="mdiDesktopClassic" />
       </div>
       <div
-        class="info"
+        class="info info5"
         @mouseover="updateCenterContent('Illustrator')"
         @mouseout="clearContent"
-        style="transform: rotate(120deg)"
       >
         <IconMdi class="icon" :mdiIconName="mdiPalette" />
       </div>
       <div
-        class="info"
+        class="info info6"
         @mouseover="updateCenterContent('Brewer')"
         @mouseout="clearContent"
-        style="transform: rotate(150deg)"
       >
         <IconMdi class="icon" :mdiIconName="mdiBeer" />
       </div>
       <div
-        class="info"
+        class="info info7"
         @mouseover="updateCenterContent('Hobbies')"
         @mouseout="clearContent"
-        style="transform: rotate(180deg)"
       >
         <IconMdi class="icon" :mdiIconName="mdiDiceD20" />
       </div>
-      <div class="center-content">{{ centerContent }}</div>
+      <div class="info8 center-content">
+        {{ centerContent }}
+      </div>
     </div>
   </div>
 </template>
@@ -159,112 +154,220 @@ function processCorrectNbYear(endDate: Date, starDate: Date) {
 <style>
 .container-wheel {
   position: relative;
-  margin-top: 10vh;
-  margin-left: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 75vh;
 }
+
 .sun {
-  position: absolute;
   width: 50vh;
   height: 50vh;
-  margin: 50px auto;
-  border-radius: 50%;
   background: linear-gradient(-90deg, var(--color-theme), #f9dd62);
   box-shadow: 0 0 30px 12px var(--color-shadow);
-  /* background-image: url('../assets/photo_jojo_cv.jpg'); */
-  /* background-size: 75%; */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.satellite {
-  position: absolute;
-  width: 20vh;
-  height: 20vh;
-  margin: 50px -15vh;
-  border-radius: 100%;
-  background-image: url('../assets/photo_jojo_cv.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  box-shadow: 0 0 30px 12px #f9dd62;
-  z-index: 3;
-  animation: fadein 1s;
-}
+
 .wheel {
   position: absolute;
-  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0deg); /* Cette rotation peut être animée si nécessaire */
 }
+
 .info {
-  position: absolute;
-  align-content: space-evenly;
-  width: 50vh;
-  font:
-    bold 20px Arial,
-    sans-serif;
-  color: #fff;
+  width: 15vh; /* ajuster selon la taille que tu veux */
+  height: 15vh;
+  font-size: 20px;
   text-align: center;
+  line-height: 15vh; /* Centrer le texte à l'intérieur de l'élément */
   border-radius: 50%;
-  transform-origin: 50% 30vh;
   cursor: pointer;
+  position: absolute; /* Permet de positionner ces éléments autour du cercle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 2;
-
-  animation: fadein 1s;
 }
 
-.info:nth-child(2) .icon {
-  transform: rotate(-30deg); /* Rotation inverse pour garder l'icône droite */
-}
-
-.info:nth-child(3) .icon {
-  transform: rotate(-60deg);
-}
-.info:nth-child(4) .icon {
-  transform: rotate(-90deg);
-}
-.info:nth-child(5) .icon {
-  transform: rotate(-120deg);
-}
-.info:nth-child(6) .icon {
-  transform: rotate(-150deg);
-}
-.info:nth-child(7) .icon {
-  transform: rotate(-180deg);
-}
 .center-content {
-  align-content: center;
   position: absolute;
-  width: 50vh;
-  height: 60vh;
-  /* transform: translate(22vh, 26vh); */
-  text-align: center;
-  font-size: 1.5em;
-  color: var(--color-background);
-  background-color: transparent;
-  padding: 10px;
-  border-radius: 10px;
-  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  font-size: 20px;
+  color: black;
+  width: 20%;
 }
-@media (min-width: 1024px) {
+@media (max-width: 768px) {
+  .sun {
+    display: none;
+  }
   .container-wheel {
     position: relative;
     margin-top: 10vh;
-    margin-left: 40vh;
+    height: 50vh;
+  }
+  .wheel {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 0.25fr 3.5fr 0.25fr;
+    grid-template-areas:
+      'info1 info2 info3'
+      'info4 center-content info5'
+      'info6 info7 info8';
+    gap: 4px;
+    column-gap: 1px;
+    pointer-events: all;
+    align-items: center;
+    height: 100%;
+  }
+  .center-content {
+    position: relative;
+    color: var(--color-text);
+    width: 50vw;
+    z-index: 0;
+    align-self: baseline;
+  }
+  .info {
+    margin-top: 0;
+    position: relative;
+    transform: none;
+    width: auto;
+    z-index: 1;
+    animation: fadein 1s;
+  }
+  .info1 {
+    grid-area: info1;
+  }
+  .info2 {
+    grid-area: info2;
+  }
+  .info3 {
+    grid-area: info3;
+  }
+  .info4 {
+    grid-area: info4;
+  }
+  .info5 {
+    grid-area: info5;
+  }
+  .info6 {
+    grid-area: info6;
+  }
+  .info7 {
+    grid-area: info7;
+  }
+  .info8 {
+    grid-area: center-content;
   }
 }
-/* @keyframes spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 768px) and (max-width: 1280px) {
+  /* Adapter la taille des éléments pour les écrans plus larges */
+  .sun {
+    width: 40vh;
+    height: 40vh;
+    transition: 1s;
   }
-  to {
-    transform: rotate(360deg);
+
+  .info {
+    width: 12vh;
+    height: 12vh;
   }
-} */
-@keyframes fadein {
-  from {
-    opacity: 0;
+  .info1 {
+    top: 0;
   }
-  to {
-    opacity: 1;
+
+  .info2 {
+    top: 0;
+    transform: translate(125%, 25%);
+  }
+
+  .info3 {
+    top: 0;
+    transform: translate(215%, 110%);
+  }
+
+  .info4 {
+    top: 0;
+    transform: translate(250%, 250%);
+  }
+
+  .info5 {
+    top: 0;
+    transform: translate(215%, 385%);
+  }
+
+  .info6 {
+    top: 0;
+    transform: translate(125%, 475%);
+  }
+
+  .info7 {
+    top: 0;
+    transform: translate(0%, 500%);
+  }
+}
+
+@media (min-width: 1280px) {
+  /* Adapter encore plus pour les écrans très larges */
+  .sun {
+    width: 40vh;
+    height: 40vh;
+    transition: 1s;
+  }
+  .container-wheel {
+    height: 55vh;
+  }
+  .wheel {
+    height: 135%;
+  }
+  .info {
+    width: 12vh;
+    height: 12vh;
+  }
+  .info1 {
+    top: 0;
+  }
+
+  .info2 {
+    top: 0;
+    transform: translate(125%, 25%);
+  }
+
+  .info3 {
+    top: 0;
+    transform: translate(215%, 110%);
+  }
+
+  .info4 {
+    top: 0;
+    transform: translate(250%, 250%);
+  }
+
+  .info5 {
+    top: 0;
+    transform: translate(215%, 385%);
+  }
+
+  .info6 {
+    top: 0;
+    transform: translate(125%, 475%);
+  }
+
+  .info7 {
+    top: 0;
+    transform: translate(0%, 500%);
   }
 }
 </style>
