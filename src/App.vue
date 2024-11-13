@@ -26,7 +26,6 @@ import NavBar from './components/NavBar.vue'
 .container {
   width: 100%;
   height: 100%;
-  position: fixed;
   text-align: center;
 }
 header {
@@ -37,29 +36,5 @@ main {
 }
 .router-view {
   margin: 5vw;
-}
-@media (min-width: 1324px) {
-  main {
-    /* width: 75vw;
-    height: auto;
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center; */
-  }
-}
-@media (min-width: 760px) and (max-width: 1323px) {
-  main {
-    /* width: 50%;
-    height: auto;
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center; */
-  }
-}
-@media (max-width: 760px) {
-  main {
-  }
 }
 </style>
