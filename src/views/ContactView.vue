@@ -1,11 +1,6 @@
 <template>
   <div v-if="!emailSuccessfulySend" class="contact-view">
-    <form
-      id="myForm"
-      action="mailto:lejeune.joachim@gmail.com"
-      method="post"
-      enctype="text/plain"
-    >
+    <form id="myForm" method="post" enctype="text/plain">
       <ul>
         <li>
           <label for="name">Nom : </label>
@@ -75,7 +70,6 @@ export default {
 <style>
 .contact-view {
   position: relative;
-  margin: 10vh;
 }
 form {
   /* On centre le formulaire */
@@ -138,7 +132,7 @@ textarea {
   text-align: center;
 }
 .btn {
-  width: 20vh;
+  width: 30%;
   background-color: var(--color-theme);
   cursor: pointer;
   border-radius: 30px;
@@ -146,11 +140,11 @@ textarea {
 .btn:hover {
   box-shadow: 0 0 12px 4px var(--color-theme-fade);
 }
-@media (max-width: 750px) {
+@media (max-width: 768px) {
   form {
     /* On centre le formulaire */
     margin: 0 auto;
-    width: calc(100% - 10vh);
+    width: calc(100% - 10vw);
     /* Le contour du formulaire */
     padding: 1em;
     border: 4px solid var(--color-border);
