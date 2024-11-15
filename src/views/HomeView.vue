@@ -239,11 +239,11 @@ function processCorrectNbYear(endDate: Date, starDate: Date) {
     position: relative;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    grid-template-rows: 0.25fr 3.5fr 0.25fr;
+    grid-template-rows: 1fr auto 1fr;
     grid-template-areas:
       'info1 info2 info3'
       'info4 center-content info5'
-      'info6 info7 info8';
+      'info6 center-content info7';
     gap: 4px;
     column-gap: 1px;
     pointer-events: all;
@@ -254,17 +254,16 @@ function processCorrectNbYear(endDate: Date, starDate: Date) {
     position: relative;
     color: var(--color-text);
     width: 50vw;
-    z-index: 0;
-    align-self: baseline;
+    align-self: normal;
   }
   .info {
     margin-top: 0;
     position: relative;
     transform: none;
     width: auto;
-    z-index: 1;
     animation: fadein 1s;
   }
+
   .info1 {
     grid-area: info1;
   }
