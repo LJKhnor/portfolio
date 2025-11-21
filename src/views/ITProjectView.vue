@@ -2,7 +2,7 @@
   <div class="project-view">
     <dl class="it-projects">
       <!-- <div class="div-project"> -->
-        <!-- <dt class="dt">GW2 Farming Tracker (coming soon)</dt>
+      <!-- <dt class="dt">GW2 Farming Tracker (coming soon)</dt>
         <dd class="dd">
           <ul>
             <li>
@@ -35,10 +35,16 @@
         </dd> -->
       <!-- </div> -->
       <div class="div-project">
-        <dt class="dt">PediMed (<a
-            href="https://pedimed-pro.be"
-            target="_blank"
-            >Site <img src="../assets/logo_pedicure_val.png" width="20em" height="20rem" alt=""></a>)</dt>
+        <dt class="dt">
+          PediMed (<a href="https://pedimed-pro.be" target="_blank"
+            >Website
+            <img
+              src="../assets/logo_pedicure_val.png"
+              width="20em"
+              height="20rem"
+              alt="" /></a
+          >)
+        </dt>
         <dd class="dd">
           <ul>
             <li>
@@ -62,7 +68,7 @@
                 >Vue.js <img src="../assets/icons8-vue-js-16.png"
               /></a>
             </li>
-            <!-- <li>+ 150h of work (ongoing)</li> -->
+            <li>+ 150h of work (ongoing)</li>
           </ul>
           <p class="explications">
             PediMed is a web and mobile application that allows specialized
@@ -91,6 +97,7 @@
           </p>
         </dd>
       </div>
+
       <div class="div-project">
         <dt class="dt">
           Elo Ranking System (<a
@@ -125,12 +132,13 @@
           </ul>
           <p class="explications">
             Elo Ranking System is a web application that allows you to create
-            Magic the gathering league for several players and encode their
+            Magic the Gathering league for several players and encode their
             games, their decks. As the results are integrated, statistics are
             calculated and accessible in a dashboard.
           </p>
         </dd>
       </div>
+
       <div class="div-project">
         <dt class="dt">
           Iotrack (<a href="https://www.actia.be/fr" target="_blank"
@@ -167,6 +175,7 @@
           </p>
         </dd>
       </div>
+
       <div class="div-project">
         <dt class="dt">
           Telefleet (<a href="https://www.actia.be/fr" target="_blank"
@@ -206,13 +215,16 @@
     </dl>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ITProject from '@/components/ITProject.vue'
+</script>
 <style>
 .project-view {
   position: relative;
   margin: 10vh;
 }
 .it-projects {
+  margin: 2px 15vw;
 }
 .div-project {
   margin-top: 4vh;
