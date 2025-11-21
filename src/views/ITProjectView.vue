@@ -1,8 +1,8 @@
 <template>
   <div class="project-view">
     <dl class="it-projects">
-      <div class="div-project">
-        <dt class="dt">GW2 Farming Tracker (coming soon)</dt>
+      <!-- <div class="div-project"> -->
+        <!-- <dt class="dt">GW2 Farming Tracker (coming soon)</dt>
         <dd class="dd">
           <ul>
             <li>
@@ -32,10 +32,13 @@
             statistical calculation of farming sessions on the Guild Wars 2
             mmorpg.
           </p>
-        </dd>
-      </div>
+        </dd> -->
+      <!-- </div> -->
       <div class="div-project">
-        <dt class="dt">PediMed (ongoing)</dt>
+        <dt class="dt">PediMed (<a
+            href="https://pedimed-pro.be"
+            target="_blank"
+            >Site <img src="../assets/logo_pedicure_val.png" width="20em" height="20rem" alt=""></a>)</dt>
         <dd class="dd">
           <ul>
             <li>
@@ -59,7 +62,7 @@
                 >Vue.js <img src="../assets/icons8-vue-js-16.png"
               /></a>
             </li>
-            <li>+ 150h of work (ongoing)</li>
+            <!-- <li>+ 150h of work (ongoing)</li> -->
           </ul>
           <p class="explications">
             PediMed is a web and mobile application that allows specialized
@@ -80,7 +83,7 @@
                 >Vue.js <img src="../assets/icons8-vue-js-16.png"
               /></a>
             </li>
-            <li>20 hours of work</li>
+            <!-- <li>20 hours of work</li> -->
           </ul>
           <p class="explications">
             This portfolio is a showcase of my achievements as a worker since I
@@ -118,7 +121,7 @@
                 >Flask <img src="../assets/icons8-flask-16.png"
               /></a>
             </li>
-            <li>40 hours of work</li>
+            <!-- <li>40 hours of work</li> -->
           </ul>
           <p class="explications">
             Elo Ranking System is a web application that allows you to create
@@ -228,7 +231,10 @@ p {
   margin-top: 2vh;
   text-indent: 0%;
 }
-
+img {
+  background-color: var(--color-theme);
+  border-radius: 50%;
+}
 @media (hover: hover) {
 }
 @media (min-width: 1324px) {
